@@ -28,7 +28,7 @@ const overspendInput = {
 const res1 = gate.verify(overspendInput);
 assert.strictEqual(res1.passed, false, "Gate 1 should reject overspending yield");
 assert.ok(res1.reason?.includes("REJECT_GATE_1: YIELD_BUDGET_EXCEEDED"), "Reason must be YIELD_BUDGET_EXCEEDED");
-console.log("✔ PASSED: Overspend blocked in 0ms. Principal 100% untouched.");
+console.log("✔ PASSED: Overspend blocked synchronously (<1ms in-memory). Principal untouched.");
 
 // TEST 2: Oracle Staleness (Gate 2)
 console.log("\n[TEST 2] Asserting Oracle Freshness: Feed lag = 4500ms (> 3000ms max)...");

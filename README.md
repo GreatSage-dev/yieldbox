@@ -19,7 +19,7 @@ Institutions like Harvard and Yale never spend their core capital; they lock pri
 
 YieldBox brings this budgetary discipline to PayBox:
 1. **Principal Protection:** The creator designates a principal balance ($1,000 USDC). The plugin acts as a budget governor, ensuring the agent only requests spends from accrued yield.
-2. **Yield-Calibrated Allowance:** The vault calculates a streaming work allowance calibrated to **5.10% APY** (benchmarked against Short-Term US Treasuries via Ondo USDY).
+2. **Yield-Calibrated Work Allowance:** The vault deterministically computes a streaming work allowance calibrated to **5.10% APY** (based on the Short-Term US Treasuries / Ondo USDY benchmark rate: `principal × 5.10% × elapsed_time / 365 days`). This provides a predictable operational allowance settled in native Base USDC without cross-chain oracle delay.
 3. **The Yield-Only Work Envelope:** The agent is restricted to spending accrued yield to pay for x402 HTTP micro-services and inference queries.
 4. **Idle State on Depletion:** If accrued yield reaches zero, the agent transitions to an idle state until new yield accrues, preventing runaway balance exhaustion.
 
@@ -96,15 +96,15 @@ Before any x402 proposal is generated, the request must clear 5 deterministic ch
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
 │ GATE 2: ORACLE FRESHNESS ENVELOPE                                      │
-│ • Asserts: (Now - CallerOracleTimestamp) <= 3000ms.                    │
-│ • Rejects stale oracle pricing data.                                   │
+│ • For dynamic quotes/fiat conversions: (Now - OracleTimestamp) <= 3s. │
+│ • Rejects stale caller-provided pricing feeds before proposal creation.│
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │ [Pass]
                                     ▼
 ┌────────────────────────────────────────────────────────────────────────┐
 │ GATE 3: SLIPPAGE & LIQUIDITY DEPTH BOUNDARY                            │
-│ • Asserts: CallerExpectedSlippage <= 100 bps (1.0%).                   │
-│ • Rejects transactions exceeding policy slippage limits.               │
+│ • For dynamic routing/swaps: Asserts CallerExpectedSlippage <= 100 bps │
+│ • Rejects quotes exceeding the 1.0% policy slippage cap.               │
 └───────────────────────────────────┬────────────────────────────────────┘
                                     │ [Pass]
                                     ▼
@@ -147,7 +147,7 @@ npm run test:gates
 Output:
 ```text
 [TEST 1] Asserting Principal Iron Wall: Attempting to spend $10 when yield is $5...
-✔ PASSED: Overspend blocked in 0ms. Principal 100% untouched.
+✔ PASSED: Overspend blocked synchronously (<1ms in-memory). Principal untouched.
 
 [TEST 15] Live Base Mainnet RPC Verification: Querying https://mainnet.base.org...
 ✔ PASSED: Connected to Base Mainnet (Block #52743415). Verified Base USDC on-chain (Decimals: 6).
