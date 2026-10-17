@@ -162,14 +162,17 @@ YieldBox exposes 3 standard Model Context Protocol (MCP) tools over stdio:
 
 YieldBox has zero mocked arrays or dead button handlers. Everything is verified via deterministic Node 24 scripts:
 
-### 1. Run the Hardened 14-Assertion Adversarial Gate Suite:
+### 1. Run the Hardened 15-Assertion Adversarial & Live Base On-Chain Suite:
 ```bash
 npm run test:gates
 ```
 Output:
 ```text
+[TEST 15] Live Base Mainnet RPC Verification: Querying https://mainnet.base.org...
+✔ PASSED: Connected to Base Mainnet (Block #52742648). Verified Base USDC on-chain (Decimals: 6).
+
 ================================================================================
-   ALL 14 ADVERSARIAL & CONCURRENCY ASSERTIONS PASSED WITH ZERO FLUFF.          
+   ALL 15 ADVERSARIAL & LIVE ON-CHAIN ASSERTIONS PASSED WITH ZERO FLUFF.        
    AUDIT SEAL: CONFIRMED SOUND & CRYPTOGRAPHICALLY SECURE.                      
 ================================================================================
 ```
