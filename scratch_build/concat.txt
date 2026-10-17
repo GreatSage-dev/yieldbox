@@ -1,0 +1,6 @@
+file 'c:/Users/HP LAPTOP/Documents/paybox/scratch_build/intro_part.mp4'
+file 'c:/Users/HP LAPTOP/Documents/paybox/scratch_build/cut1.mp4'
+file 'c:/Users/HP LAPTOP/Documents/paybox/scratch_build/cut2.mp4'
+file 'c:/Users/HP LAPTOP/Documents/paybox/scratch_build/cut3.mp4'
+file 'c:/Users/HP LAPTOP/Documents/paybox/scratch_build/cut4.mp4'
+file 'c:/Users/HP LAPTOP/Documents/paybox/scratch_build/cut5.mp4'

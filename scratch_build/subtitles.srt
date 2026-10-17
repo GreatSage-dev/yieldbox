@@ -1,0 +1,83 @@
+1
+00:00:00,000 --> 00:00:03,000
+⚡ YIELD-BOX · The Perpetual Agent Endowment Vault
+
+2
+00:00:03,000 --> 00:00:07,500
+Every autonomous AI agent built today has an expiration date.
+
+3
+00:00:07,500 --> 00:00:13,200
+You fund its hot wallet with $200; it hits a recursive loop or queries expensive x402 APIs...
+
+4
+00:00:13,200 --> 00:00:17,500
+The balance drains to zero; the agent dies.
+
+5
+00:00:17,500 --> 00:00:23,610
+Funding agents with consumable balances is broken.
+
+6
+00:00:23,610 --> 00:00:28,500
+We built YieldBox—the first perpetual endowment vault for PayBox agents.
+
+7
+00:00:28,500 --> 00:00:35,000
+Instead of giving the agent your savings, your principal is locked in MoonX MPC behind a passkey.
+
+8
+00:00:35,000 --> 00:00:41,500
+The vault generates a 5.10% APY work allowance anchored to Short-Term US Treasuries...
+
+9
+00:00:41,500 --> 00:00:47,510
+...spending only what it earns in native Base USDC.
+
+10
+00:00:47,510 --> 00:00:52,000
+Watch what happens when the agent tries to overspend.
+
+11
+00:00:52,000 --> 00:00:57,000
+Here, the vault holds $5 in accrued yield. The agent requests a $10 x402 query.
+
+12
+00:00:57,000 --> 00:01:03,000
+Instantly—in zero milliseconds—Gate 1 trips: REJECT_GATE_1: YIELD_BUDGET_EXCEEDED.
+
+13
+00:01:03,000 --> 00:01:08,000
+The principal is 100% untouched. No model hallucination can bypass this.
+
+14
+00:01:08,000 --> 00:01:13,240
+Execution halts before touching PayBox MPC keys.
+
+15
+00:01:13,240 --> 00:01:19,000
+When the agent requests a valid $0.05 micro-service, all gates clear...
+
+16
+00:01:19,000 --> 00:01:25,000
+...and construct the canonical PayBox x402 transaction proposal on Base.
+
+17
+00:01:25,000 --> 00:01:33,010
+Notice Test 15: the test suite connects live to Base Mainnet, queries block height, and verifies Base USDC.
+
+18
+00:01:33,010 --> 00:01:37,500
+Double-build byte determinism: passed.
+
+19
+00:01:37,500 --> 00:01:42,000
+Official PayBox MCP protocol conformance: passed.
+
+20
+00:01:42,000 --> 00:01:46,500
+15 adversarial assertions: clean.
+
+21
+00:01:46,500 --> 00:01:53,930
+YieldBox turns any PayBox agent into a self-funding worker that can never drain your savings.
