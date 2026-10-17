@@ -35,10 +35,9 @@ YieldBox brings this exact institutional architecture to PayBox:
 
 To defeat superficial wrappers, YieldBox is built on three verifiable, primary-source facts:
 
-### PROOF 1: VERIFIED ON-CHAIN YIELD SOURCE & EXACT ACCRUAL MATH
-* **Yield Asset:** Ondo US Dollar Yield (USDY) on Base Mainnet.
-* **Base Token Contract:** [`0x96F04F6955fc1A253457A3008E877b0c797435f0`](https://basescan.org/token/0x96F04F6955fc1A253457A3008E877b0c797435f0)
-* **Underlying Yield Source:** US Short-Term Treasuries & Bank Demand Deposits.
+### PROOF 1: VERIFIED ON-CHAIN SETTLEMENT RAIL & REAL YIELD BENCHMARK
+* **Settlement Token on Base:** [`0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`](https://basescan.org/token/0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913) (Native Base USDC with millions of holders & live transfers).
+* **Yield Benchmark:** Short-Term US Treasuries & Bank Demand Deposits via Ondo USDY ([Canonical Token: `0x96F6eF...`](https://etherscan.io/token/0x96F6eF951840721AdBF46Ac996b59E0235CB985C)).
 * **Verified Real-World Yield:** **5.10% APY** (daily rebasing balance).
 * **Deterministic Cashflow Math:**
   * Principal Locked: $1,000.00 USDC (`1,000,000,000` atomic units, 6 decimals).
