@@ -1,4 +1,9 @@
 node_modules/
+scratch_*
+*.mp4
+*.mp3
+*.jpg
+*.png
 .DS_Store
 *.log
 npm-debug.log*
